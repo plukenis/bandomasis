@@ -36,17 +36,17 @@ function Modal({ showModal, hide, modalElement, edit, remove }) {
   };
 
   const handleRemove = () => {
-    remove(modalElement.id)
-    console.log(modalElement.id)
-  
+    remove(modalElement.id);
+    console.log(modalElement.id);
   };
 
   return (
-    <div className="main__modal" 
-    style={{ 
-      display: showModal ? 
-      "flex" : "none" 
-      }}>
+    <div
+      className="main__modal"
+      style={{
+        display: showModal ? "flex" : "none",
+      }}
+    >
       <div className="main__form">
         <h2>Edit scooter</h2>
         <div className="main__form__input">
@@ -81,7 +81,7 @@ function Modal({ showModal, hide, modalElement, edit, remove }) {
             onChange={(e) => control(e, "total_ride_kilometers")}
           />
         </div>
-        <div className='main__form__input__buttons'></div>
+        <div className="main__form__input__buttons"></div>
         <button onClick={handleEdit}>Save</button>
         <button onClick={handleRemove}>Delete</button>
         <button onClick={hide}>Cancel</button>
