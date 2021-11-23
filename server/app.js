@@ -18,7 +18,7 @@ const mysql = require("mysql");
 const con = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
-  database: "scooters",
+  database: "bandomasis",
   password: "root",
 });
 
@@ -40,12 +40,12 @@ app.use(express.json());
 
 // Routeris - nusakomas kelias kas turi ivykti kai narsykle kreipsis ir ka serveris atsakys
 
-app.get("/labas/:id", (req, res) => {
-  res.send(`labas tau ${req.params.id} `);
-});
-app.get("/test", (req, res) => {
-  res.send(JSON.stringify({ test: "OK" }));
-});
+// app.get("/labas/:id", (req, res) => {
+//   res.send(`labas tau ${req.params.id} `);
+// });
+// app.get("/test", (req, res) => {
+//   res.send(JSON.stringify({ test: "OK" }));
+// });
 //   -------------------------------------------------------------------------------
 
 // Read node
@@ -80,7 +80,7 @@ app.delete("/scooters/:id", (req, res) => {
 app.put("/scooters/:id", (req, res) => {
   const sql = `
       UPDATE scooters
-      SET registration_code = ?, is_busy = ?, last_use_time = ?, total_ride_kilometres = ?, one_day_ride = ?
+      SET registration_code = ?, is_busy = ?, last_use_time = ?, total_ride_kilometers = ?, one_day_ride = ?
       WHERE id = ?
   `;
   con.query(
@@ -89,7 +89,7 @@ app.put("/scooters/:id", (req, res) => {
       req.body.registration_code,
       req.body.is_busy,
       req.body.last_use_time,
-      parseFloat(req.body.total_ride_kilometres) +
+      parseFloat(req.body.total_ride_kilometers) +
         parseFloat(req.body.one_day_ride),
       req.body.one_day_ride,
       req.params.id,
@@ -107,7 +107,7 @@ app.put("/scooters/:id", (req, res) => {
 app.post("/scooters", (req, res) => {
   const sql = `
       INSERT INTO scooters
-      (registration_code, is_busy, last_use_time, total_ride_kilometres, one_day_ride)
+      (registration_code, is_busy, last_use_time, total_ride_kilometers, one_day_ride)
       VALUES (?, ?, ?, ?, ?)
   `;
   con.query(
@@ -116,7 +116,7 @@ app.post("/scooters", (req, res) => {
       req.body.registration_code,
       req.body.is_busy,
       req.body.last_use_time,
-      req.body.total_ride_kilometres,
+      req.body.total_ride_kilometers,
       req.body.one_day_ride,
     ],
     (err, results) => {

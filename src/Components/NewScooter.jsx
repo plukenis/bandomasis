@@ -6,7 +6,7 @@ function NewScooter({ create }) {
         registration_code: '',
         is_busy: false,
         last_use_time: '',
-        total_ride_kilometres: 0,
+        total_ride_kilometers: 0,
         one_day_ride: 0
     })
 
@@ -25,7 +25,7 @@ function NewScooter({ create }) {
             registration_code: '',
             is_busy: false,
             last_use_time: '',
-            total_ride_kilometres: '',
+            total_ride_kilometers: '',
             one_day_ride: ''
         })
     }
@@ -49,7 +49,7 @@ function NewScooter({ create }) {
                 <span>New one day ride kilometres: </span> <input type="number" value={inputs.one_day_ride} onChange={(e) => control(e, 'one_day_ride')} required />
             </div>
             <div className='each-new-item'>
-                <span>Total ride kilometres: </span> <input type="number" value={inputs.total_ride_kilometres} onChange={(e) => control(e, 'total_ride_kilometres')} />
+                <span>Total ride kilometres: </span> <input type="number" value={inputs.total_ride_kilometers} onChange={(e) => control(e, 'total_ride_kilometers')} />
             </div>
             <div className='each-new-item'>
                 <button onClick={handleCreate}>Save</button>
