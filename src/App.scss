@@ -20,6 +20,14 @@
     transition: 0.8s;
   }
 
+  .mesg {
+    font-size: 25px;
+    text-transform: capitalize;
+    color: #fbde44ff;
+    text-shadow: 10px 10px 30px #f65058ff;
+    text-align: center;
+    font-style: italic;
+  }
   .list {
     display: flex;
     flex-direction: row;
