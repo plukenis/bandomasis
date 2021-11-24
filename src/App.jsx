@@ -45,7 +45,7 @@ function App() {
   const deleteScooter = (id) => {
     setShowModal(false);
     axios.delete("http://localhost:3003/scooters/" + id).then((res) => {
-      addMsg('successfully removed');
+      addMsg('scooter successfully removed !');
       setLastUpdate(Date.now());
       console.log(res.data);
     });
@@ -74,7 +74,7 @@ function App() {
   const edit = (scooter, id) => {
     setShowModal(false);
     axios.put("http://localhost:3003/scooters/" + id, scooter).then((res) => {
-      addMsg('successfully saved');  
+      addMsg('scooter successfully saved !');  
       setLastUpdate(Date.now());
       console.log(res.data);
     });
@@ -83,7 +83,7 @@ function App() {
   // Create Node
   const create = (scooter) => {
     axios.post("http://localhost:3003/scooters", scooter).then((res) => {
-      addMsg('successfully added');  
+      addMsg('scooter successfully added !');  
       setLastUpdate(Date.now());
       console.log(res.data);
     });
