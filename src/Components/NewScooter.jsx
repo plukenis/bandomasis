@@ -37,7 +37,7 @@ function NewScooter({ create }) {
           type="text"
           value={inputs.registration_code}
           onChange={(e) => control(e, "registration_code")}
-          placeholder="insert 8 number combo"
+          placeholder="insert 8 character combo"
           required
           minLength="8"
           maxLength="8"
